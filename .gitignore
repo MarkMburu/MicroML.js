@@ -1,0 +1,23 @@
+# Node modules and logs
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Build tools output
+dist/
+.esbuild/
+.cache/
+
+# Source code (you want to keep this private)
+src/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# IDE configs
+.vscode/
+.idea/
+
+# Environment configs (if any)
+.env

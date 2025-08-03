@@ -1,0 +1,25 @@
+{
+  "name": "microml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+     "build": "npx esbuild src/scripts/microml.js --minify --bundle --outfile=dist/microml.min.js && npx esbuild src/styles/microml.css --minify --outfile=dist/microml.min.css && npx javascript-obfuscator dist/microml.min.js --output dist/microml.obf.js --reserved-names 'basicDemo,chainDemo,neuralNetDemo,performanceTest,Tensor'",
+     "deploy": "npm run build && gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkMburu/MicroML.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkMburu/MicroML.js"
+  },
+  "homepage": "https://github.com/MarkMburu/MicroML.js",
+  "devDependencies": {
+    "esbuild": "^0.25.8",
+    "gh-pages": "^6.3.0"
+  }
+}
