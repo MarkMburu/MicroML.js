@@ -1,0 +1,273 @@
+   body {
+            font-family: 'Monaco', 'Menlo', monospace;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 10px;
+            color: white;
+            min-height: 100vh;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.3);
+            border-radius: 15px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            font-size: 1em;
+            opacity: 0.8;
+            margin-bottom: 20px;
+        }
+        
+        .demo-section {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .code-block {
+            background: rgba(0,0,0,0.6);
+            border-radius: 8px;
+            padding: 12px;
+            margin: 10px 0;
+            font-family: 'Monaco', monospace;
+            overflow-x: auto;
+            border-left: 4px solid #4facfe;
+            font-size: 12px;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        
+        button {
+            background: linear-gradient(45deg, #4facfe, #00f2fe);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 8px 5px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+            font-size: 14px;
+            min-width: 140px;
+            text-align: center;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .output {
+            background: rgba(0,0,0,0.4);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            min-height: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            font-size: 13px;
+        }
+        
+        .op-chain {
+            background: rgba(255,255,255,0.05);
+            border-radius: 5px;
+            padding: 8px;
+            margin: 5px 0;
+            border-left: 3px solid #00f2fe;
+            font-size: 12px;
+        }
+        
+        .performance {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .metric {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 12px;
+            border-radius: 10px;
+            min-width: 100px;
+            flex: 1;
+            max-width: 150px;
+        }
+        
+        .metric-value {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #4facfe;
+        }
+        
+        .philosophy {
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+            border-radius: 10px;
+            padding: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .philosophy ul {
+            padding-left: 20px;
+        }
+        
+        .philosophy li {
+            margin-bottom: 8px;
+        }
+        
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            body {
+                padding: 5px;
+                font-size: 13px;
+            }
+            
+            .container {
+                padding: 15px;
+                border-radius: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+                margin-bottom: 8px;
+            }
+            
+            h3 {
+                font-size: 1.1em;
+                margin-bottom: 12px;
+            }
+            
+            .subtitle {
+                font-size: 0.9em;
+                margin-bottom: 15px;
+            }
+            
+            .demo-section {
+                padding: 12px;
+                margin: 12px 0;
+            }
+            
+            .code-block {
+                padding: 10px;
+                font-size: 11px;
+                border-left: 3px solid #4facfe;
+            }
+            
+            button {
+                padding: 12px 16px;
+                margin: 8px 2px;
+                font-size: 13px;
+                min-width: 120px;
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .output {
+                padding: 12px;
+                font-size: 12px;
+            }
+            
+            .performance {
+                gap: 10px;
+            }
+            
+            .metric {
+                padding: 10px;
+                min-width: 80px;
+                max-width: 120px;
+            }
+            
+            .metric-value {
+                font-size: 1.3em;
+            }
+            
+            .philosophy {
+                padding: 12px;
+            }
+            
+            .philosophy ul {
+                padding-left: 15px;
+            }
+        }
+        
+        /* Small Mobile Styles */
+        @media (max-width: 480px) {
+            body {
+                padding: 3px;
+                font-size: 12px;
+            }
+            
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 1.6em;
+            }
+            
+            .code-block {
+                font-size: 10px;
+                padding: 8px;
+            }
+            
+            button {
+                font-size: 12px;
+                padding: 10px 14px;
+                margin: 6px 1px;
+            }
+            
+            .performance {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .metric {
+                width: 100%;
+                max-width: none;
+            }
+            
+            .demo-section {
+                padding: 10px;
+            }
+        }
+        
+        /* Touch-friendly improvements */
+        @media (hover: none) and (pointer: coarse) {
+            button {
+                padding: 14px 20px;
+                margin: 10px 5px;
+                font-size: 14px;
+            }
+            
+            .output {
+                padding: 16px;
+            }
+        }

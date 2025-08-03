@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MicroML.js - Minimal ML Framework</title>
+    <link rel="stylesheet" href="dist/microml.min.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>🧠 MicroML.js</h1>
+      <div class="subtitle">Minimal Machine Learning Framework for the Web</div>
+
+      <div class="philosophy">
+        <h3>📋 Core Philosophy</h3>
+        <p><strong>Everything</strong> is built from just 3 operation types:</p>
+        <ul>
+          <li>
+            <code>UnaryOps</code> - Single tensor operations (relu, exp, log,
+            etc.)
+          </li>
+          <li>
+            <code>BinaryOps</code> - Two tensor operations (add, mul, etc.)
+          </li>
+          <li>
+            <code>ReduceOps</code> - Reduction operations (sum, max, etc.)
+          </li>
+        </ul>
+        <p>
+          🎯 <em>"If XLA is CISC, MicroML is RISC"</em> - Radical simplicity
+          over feature bloat
+        </p>
+      </div>
+
+      <div class="demo-section">
+        <h3>🚀 Basic Tensor Operations</h3>
+        <div class="code-block">
+          const a = new Tensor([[1, 2], [3, 4]]); const b = new Tensor([[5, 6],
+          [7, 8]]); const result = a.add(b).mul(new Tensor([[2, 2], [2, 2]]));
+          console.log(result.realize()); // Lazy execution until .realize()
+        </div>
+        <button onclick="basicDemo()">Run Basic Demo</button>
+        <div class="output" id="basic-output"></div>
+      </div>
+
+      <div class="demo-section">
+        <h3>🔗 Lazy Operation Chain Visualization</h3>
+        <div class="code-block">
+          // Operations are lazy - they build a computation graph const x = new
+          Tensor([[1, 2, 3]]); const chain = x.mul(2).add(1).sum().exp();
+          console.log('Operation chain:', chain.getOpChain());
+        </div>
+        <button onclick="chainDemo()">Show Operation Chain</button>
+        <div class="output" id="chain-output"></div>
+      </div>
+
+      <div class="demo-section">
+        <h3>🧮 Neural Network Example</h3>
+        <div class="code-block">
+          // Simple linear layer: y = xW + b function linear(x, weight, bias) {
+          return x.matmul(weight).add(bias); } // ReLU activation (UnaryOp)
+          function relu(x) { return x.relu(); } // Simple 2-layer network const
+          input = new Tensor([[0.5, -0.2, 0.1]]); const w1 = new Tensor([[0.1,
+          0.2], [-0.1, 0.3], [0.2, -0.1]]); const b1 = new Tensor([[0.1,
+          -0.05]]); const w2 = new Tensor([[0.5], [-0.3]]); const b2 = new
+          Tensor([[0.1]]); const output = linear(relu(linear(input, w1, b1)),
+          w2, b2);
+        </div>
+        <button onclick="neuralNetDemo()">Run Neural Network</button>
+        <div class="output" id="nn-output"></div>
+      </div>
+
+      <div class="demo-section">
+        <h3>⚡ Performance Metrics</h3>
+        <button onclick="performanceTest()">Run Performance Test</button>
+        <div class="performance" id="performance-output">
+          <div class="metric">
+            <div class="metric-value" id="ops-per-sec">-</div>
+            <div>Ops/sec</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="memory-usage">-</div>
+            <div>Memory (KB)</div>
+          </div>
+          <div class="metric">
+            <div class="metric-value" id="bundle-size">12</div>
+            <div>Bundle Size (KB)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="demo-section">
+        <h3>🎯 Framework Comparison</h3>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+          "
+        >
+          <div class="metric">
+            <strong>MicroML.js</strong><br />
+            ✅ 3 core ops<br />
+            ✅ Lazy execution<br />
+            ✅ 12KB bundle<br />
+            ✅ WebGPU ready
+          </div>
+          <div class="metric">
+            <strong>TensorFlow.js</strong><br />
+            ❌ 100+ ops<br />
+            ❌ Eager execution<br />
+            ❌ 500KB+ bundle<br />
+            ✅ Mature ecosystem
+          </div>
+          <div class="metric">
+            <strong>PyTorch</strong><br />
+            ❌ Python only<br />
+            ❌ Heavy runtime<br />
+            ❌ Complex API<br />
+            ✅ Research standard
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="src/scripts/microml.js"></script>
+
+    </script>
+  </body>
+</html>
